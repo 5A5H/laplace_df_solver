@@ -1,8 +1,9 @@
 # Laplace Solver
-<img src="/Users/sash/c_coding/laplace_playground/assets/laplace_100x100.png" width="500">
+<img src="laplace_playground/assets/laplace_100x100.png" width="500">
 
 ## Theory
 We solve 
+
 $$div(\theta)=0$$
 
 Using finite differencing
