@@ -1,5 +1,5 @@
 # Laplace Solver
-<img src="laplace_playground/assets/laplace_100x100.png" width="500">
+<img src="assets/laplace_100x100.png" width="500">
 
 ## Theory
 We solve 
