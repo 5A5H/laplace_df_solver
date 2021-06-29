@@ -8,10 +8,9 @@ set(CMAKE_CXX_STANDARD 17)
 
 # setup parallel
 find_package(MPI)
-include_directories(SYSTEM ${MPI_INCLUDE_PATH})
 
 # set projeczt wide include directories
-include_directories(include)
+include_directories(include ${MPI_INCLUDE_PATH})
 
 # gather cpp files
 set(CPP_FILES main.cpp)
@@ -21,9 +20,10 @@ enable_testing()
 
 # build the executable
 add_executable(main ${CPP_FILES})
+add_executable(main_mpi main_mpi.cpp)
 
 # link executables to mpi
-#target_link_libraries(my_mpi_target ${MPI_C_LIBRARIES})
+target_link_libraries(main_mpi ${MPI_CXX_LIBRARIES})
 
 # add the main executable as test
 add_test(run main)
