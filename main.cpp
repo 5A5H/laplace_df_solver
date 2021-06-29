@@ -43,7 +43,6 @@ int main()
     CG.vtk("/Users/sash/c_coding/laplace_playground/postprocessing/output", 0);
     for (size_t step = 0; step<no_steps; step++)
     {
-        time += dt;
         // compute temperature increments for all inner nodes
         for (size_t i = 1; i<CG.nx; i++)
             for (size_t j = 1; j<CG.ny; j++)
@@ -82,9 +81,10 @@ int main()
             CG.vtk("/Users/sash/c_coding/laplace_playground/postprocessing/output", step);
         }
 
-        // end time step
+        // next step
         norm_error_n = norm_error;
         norm_dT_n    = norm_dT;
+        time += dt;
 
     }
     std::cout << "Finished time integraton at :" << time << std::endl; 
