@@ -19,7 +19,7 @@ int main()
     double tgt_err  = 1e-6;     // target error
 
     // simulation setup
-    Laplace::Grid2D CG = Laplace::Grid2D(10.0, 10.0, 100, 100);
+    Laplace::Grid2D CG = Laplace::Grid2D(10.0, 10.0, 10, 10);
 
     // setup temperature increment vector
     std::vector<double> delta_T(CG.noNodes,0.0);
@@ -78,7 +78,7 @@ int main()
         if (step%pfrec<=1e-12) 
         {
             std::cout << "current time: " << time << " current error: " << norm_error << " error trend :" << abs(norm_error) - abs(norm_error_n) << " (negative is good)" << std::endl;
-            CG.vtk("/Users/sash/c_coding/laplace_playground/postprocessing/output", step);
+            CG.vtk("postprocessing/output", step);
         }
 
         // next step
